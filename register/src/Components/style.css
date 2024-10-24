@@ -1,0 +1,51 @@
+.form{
+    width: 50%;
+    margin: 150px auto;
+}
+
+.title{
+    text-align: center;
+}
+form{
+    background-color:rgb(158, 196, 193);
+    margin-top:20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form div{
+    padding: 5px; 
+    display: flex;
+    flex-direction: column ;
+    gap: 10px
+}
+input{
+    width: 100%;
+    padding: 10px; 
+    border: none;
+    outline: none;
+    background-color: rgb(215, 250, 248);
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+label{
+    font-size: 1.2rem;
+    color:rgb(0, 31, 29) ;
+}
+
+.form form .btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+@media screen and (max-width:700px){
+    .form{
+        width: 85%;
+        margin: 120px auto;
+    }
+    
+
+}
