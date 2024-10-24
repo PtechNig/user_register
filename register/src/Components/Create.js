@@ -21,7 +21,7 @@ function Create() {
       tel: phone,
       email: email
     }
-    axios.post('http://127.0.0.1:8080/users/create', user)
+    axios.post('https://user-register-8rjx.onrender.com/users/create', user)
      .then(res => {
        console.log(res.data)
        alert('User created Sucessfully')

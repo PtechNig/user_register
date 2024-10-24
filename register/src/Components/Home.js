@@ -9,7 +9,7 @@ function Home() {
     let [query, setQuery] = useState([])
 
     useEffect(()=>{
-        axios.get('http://127.0.0.1:8080/users')
+        axios.get('https://user-register-8rjx.onrender.com')
         .then(response => {
             setData( response.data.data);
             console.log(response)
@@ -21,7 +21,7 @@ function Home() {
       const confirm = window.confirm('Would you like to Delete?')
 
       if(confirm) {
-        axios.delete(`http://127.0.0.1:8080/users/${id}`)
+        axios.delete(`https://user-register-8rjx.onrender.com/${id}`)
        .then(response => {
         console.log(response.data)
         alert("User deleted Successfully")
