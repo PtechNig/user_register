@@ -9,9 +9,6 @@ dotenv.config({path : "./config.env"})
 const cors = require('cors')
 
 
-
-
-
 const mongoose = require('mongoose')
 const { fileURLToPath } = require('url')
 // connecting db
