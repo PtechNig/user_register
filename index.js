@@ -30,6 +30,7 @@ const PORT = process.env.PORT || 5050
 
 // middlewares
 app.use(cors({
+    origin: "https://user-register-8rjx.onrender.com",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
   }));
