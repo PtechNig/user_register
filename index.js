@@ -7,10 +7,9 @@ const path = require('path')
 const dotenv = require('dotenv')
 dotenv.config({path : "./config.env"})
 const cors = require('cors')
-
-
 const mongoose = require('mongoose')
-const { fileURLToPath } = require('url')
+
+
 // connecting db
 mongoose.connect(process.env.DB_CONNECT, {
     useNewUrlParser: true,
@@ -23,14 +22,8 @@ mongoose.connect(process.env.DB_CONNECT, {
 
 const PORT = process.env.PORT || 5050
 
-
-
 // middlewares
-app.use(cors({
-    origin: "https://user-register-8rjx.onrender.com",
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-  }));
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -39,7 +32,10 @@ app.use(express.static(path.join(__dirname, 'register/build')));
 
 // Catch-all route to serve the React app
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'register/build', 'index.html'));
+  res.status(200).json({
+    status : 'success',
+    message: "App is running"
+  });
 });
 
 // route middleware
@@ -56,5 +52,5 @@ app.use((err,req, res, next)=>{
 
 
 app.listen(PORT, () => {
-    console.log('App is running')
+    console.log('App is running on', PORT)
 })
