@@ -29,7 +29,10 @@ const PORT = process.env.PORT || 5050
 
 
 // middlewares
-app.use(cors())
+app.use(cors({
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+  }));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
